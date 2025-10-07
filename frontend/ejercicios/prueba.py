@@ -1,5 +1,3 @@
-print("¡Hola GitHub desde VS Code!")
-
 tareas=[]
 def gestionar_tarea():
     opcion=0
