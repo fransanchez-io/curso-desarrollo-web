@@ -1,29 +1,68 @@
-tareas=[]
+tareas = []
+
+def mostrar_tareas():
+    if not tareas:
+        print("No hay tareas.")
+    else:
+        for idx, tarea in enumerate(tareas):
+            estado = "✔" if tarea["completada"] else "⏳"
+            print(f"{idx}. {tarea['descripcion']} [{estado}]")
+
 def gestionar_tarea():
-    opcion=0
-    while opcion !=5:
-        print("Bienvenido al gestor de tareas.\n Seleccione una opción")
-        print("1. Agregar Tarea.\n2. Marcar Tarea como Completada.\n3. Eliminar Tarea.\n4. Ver Tarea.\n5. Salir.")
-        opcion=int(input("Que opcion desea: "))
-        if opcion ==1:
-            tareas.append(input("Que tarea quieres añadir?: "))
-  
-        elif opcion==2:
-            marcar=int(input("Que tarea quieres marcar como completada?: "))
-            if marcar < len(tareas):
-                tareas[marcar] = True
-            else:
-                print("Esa tarea no esta en la lista")
-        elif opcion ==3:
-            eliminar=input("Que nombre quieres eleminiar?: ")
-            if eliminar in tareas:
-                tareas.remove(eliminar)
-            else:
-                print("Esa tarea no esta en la lista")
-        elif opcion==4:
-            consulta=int(input("Que tarea quieres ver?: "))
-            if consulta < len(tareas):
-                print(tareas[consulta])
-            else:
-                print("Esa tarea no esta en la lista")
+    while True:
+        print("\nBienvenido al gestor de tareas. Selecciona una opción:")
+        print("1. Agregar Tarea")
+        print("2. Marcar Tarea como Completada")
+        print("3. Eliminar Tarea")
+        print("4. Ver Tarea")
+        print("5. Ver todas las tareas")
+        print("6. Salir")
+        opcion = input("Opción: ")
+        if opcion == "1":
+            desc = input("Descripción de la tarea: ").strip()
+            if desc:
+                tareas.append({"descripcion": desc, "completada": False})
+                print("Tarea añadida.")
+        elif opcion == "2":
+            mostrar_tareas()
+            try:
+                idx = int(input("Número de tarea a marcar como completada: "))
+                if 0 <= idx < len(tareas):
+                    tareas[idx]["completada"] = True
+                    print("Tarea marcada como completada.")
+                else:
+                    print("Número inválido.")
+            except:
+                print("Introduce un número válido.")
+        elif opcion == "3":
+            mostrar_tareas()
+            try:
+                idx = int(input("Número de tarea a eliminar: "))
+                if 0 <= idx < len(tareas):
+                    tareas.pop(idx)
+                    print("Tarea eliminada.")
+                else:
+                    print("Número inválido.")
+            except:
+                print("Introduce un número válido.")
+        elif opcion == "4":
+            mostrar_tareas()
+            try:
+                idx = int(input("Número de tarea a ver: "))
+                if 0 <= idx < len(tareas):
+                    tarea = tareas[idx]
+                    estado = "Completada" if tarea["completada"] else "Pendiente"
+                    print(f"{tarea['descripcion']} - {estado}")
+                else:
+                    print("Número inválido.")
+            except:
+                print("Introduce un número válido.")
+        elif opcion == "5":
+            mostrar_tareas()
+        elif opcion == "6":
+            print("¡Hasta luego!")
+            break
+        else:
+            print("Opción inválida, intenta de nuevo.")
+
 gestionar_tarea()
