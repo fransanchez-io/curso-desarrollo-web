@@ -1,6 +1,6 @@
 /* dia1_styles.css */
 /* Creo recordar que define el ancho pero lo tengo mas perdido*/
-* { box-sizing: content-box;}
+* { box-sizing: c border-box;}
 /*Afecta al fondo y al texto del fondo, es lo que mueve el cuerpo ensi */
 body{
     font-family: system-ui, Arial, sans-serif;
