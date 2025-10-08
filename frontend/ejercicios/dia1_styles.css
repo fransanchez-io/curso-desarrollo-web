@@ -1,0 +1,33 @@
+/* dia1_styles.css */
+* { box-sizing: border-box;}
+body{
+    front-family: system-ui, Arial, sans-serif;
+    margin: 20px;
+    background: #f7f8fb;
+    color: #222;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+article{
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 12px;
+}
+@media (min-width: 700px){
+    main {display: grid; grid-template-columns: 1fr 1fr;gap: 16px;}
+}
