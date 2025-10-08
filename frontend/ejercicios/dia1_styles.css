@@ -1,7 +1,7 @@
 /* dia1_styles.css */
 * { box-sizing: border-box;}
 body{
-    front-family: system-ui, Arial, sans-serif;
+    font-family: system-ui, Arial, sans-serif;
     margin: 20px;
     background: #f7f8fb;
     color: #222;
