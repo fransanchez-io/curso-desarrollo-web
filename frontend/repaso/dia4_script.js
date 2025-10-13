@@ -14,7 +14,7 @@ console.log("¿Eres programador? " + programador);
 
 let nombreReal = prompt("Cual es tu nombre real?");
 let programadorReal = confirm("Eres programador?");
-let edadReal = parseInt("Cual es tu edad?");
+let edadReal = parseInt(prompt("Cual es tu edad?"));
 
 if (nombre !== nombreReal && programador !== programadorReal && edad === edadReal ){
     console.log("Asique hablas con la verdad, puesto que te llamas " + nombreReal + ", tienes " + edadReal + " años y " + programadorReal + " eres programador.");
