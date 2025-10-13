@@ -49,7 +49,7 @@ footer{
     margin-top: 20px;
 }
 
-@media(max-width:800ox){
+@media(max-width:800px){
     .container{
         flex-direction: column;
         padding: 10px 0;
